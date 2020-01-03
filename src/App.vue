@@ -47,6 +47,10 @@ export default {
     eventBus.$on('category-selected', (questions) => {
       this.questions = questions
     })
+
+    eventBus.$on('answer-clicked', (answer) => {
+      this.questions[answer.questionIndex].selectedAnswer = answer.answer
+    })
   }
 }
 </script>

@@ -33,6 +33,9 @@ export default {
       fetch(`https://opentdb.com/api.php?amount=10&category=${this.categoryId}&difficulty=${this.difficulty}&type=multiple`)
       .then(response => response.json())
       .then((data) => {
+        data.results.forEach((item) => {
+          item['selectedAnswer'] = null;
+        })
         this.questions = data.results;
         eventBus.$emit('category-selected', this.questions)
       })

@@ -15,7 +15,6 @@ export default {
         questionIndex: this.number
       }
       eventBus.$emit('answer-clicked', result);
-      console.log(result);
     }
   }
 }
