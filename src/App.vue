@@ -8,6 +8,7 @@
 <script>
 import AppTitle from './components/AppTitle.vue';
 import CategorySelector from './components/CategorySelector';
+import { eventBus } from './main.js'
 
 export default {
   name: 'app',
@@ -18,7 +19,8 @@ export default {
   data(){
     return {
       title: "Quizzical",
-      categories: []
+      categories: [],
+      questions: []
     }
   },
   mounted(){
@@ -26,6 +28,10 @@ export default {
     .then(response => response.json())
     .then((data) => {
       this.categories = data.trivia_categories;
+    })
+
+    eventBus.$on('category-selected', (questions) => {
+      this.questions = questions
     })
   }
 }
