@@ -1,20 +1,27 @@
 <template lang="html">
   <div>
-    <app-title :title="title"/>
-    <category-selector :categories="categories"/>
+    <div>
+      <app-title :title="title"/>
+      <category-selector :categories="categories"/>
+    </div>
+    <div>
+      <questions-list :questions="questions"/>
+    </div>
   </div>
 </template>
 
 <script>
 import AppTitle from './components/AppTitle.vue';
-import CategorySelector from './components/CategorySelector';
+import CategorySelector from './components/CategorySelector.vue';
+import QuestionsList from './components/QuestionsList.vue'
 import { eventBus } from './main.js'
 
 export default {
   name: 'app',
   components: {
     'app-title': AppTitle,
-    'category-selector': CategorySelector
+    'category-selector': CategorySelector,
+    'questions-list': QuestionsList
   },
   data(){
     return {
