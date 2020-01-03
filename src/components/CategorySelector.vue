@@ -5,6 +5,12 @@
       <option disabled value="">Please select one</option>
       <option v-for="category in categories" :value="category.id">{{category.name}}</option>
     </select>
+    <label for="difficulty-select">Difficulty level: </label>
+    <select v-model="difficulty" name="difficulty-select">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
     <button v-on:click="handleClick">Get Questions</button>
   </div>
 </template>
@@ -18,12 +24,13 @@ export default {
   data(){
     return {
       categoryId: null,
+      difficulty: null,
       questions: []
     }
   },
   methods: {
     handleClick: function(){
-      fetch(`https://opentdb.com/api.php?amount=10&category=${this.categoryId}&difficulty=medium&type=multiple`)
+      fetch(`https://opentdb.com/api.php?amount=10&category=${this.categoryId}&difficulty=${this.difficulty}&type=multiple`)
       .then(response => response.json())
       .then((data) => {
         this.questions = data.results;
