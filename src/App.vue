@@ -1,17 +1,17 @@
 <template lang="html">
   <div>
-    <div>
+    <div v-if="!questions">
       <app-title :title="title"/>
       <category-selector :categories="categories"/>
     </div>
     <div v-if="questions">
+      <h3>Select the correct answer</h3>
       <questions-list :questions="questions"/>
       <button v-on:click="handleSubmit">Submit Answers</button>
       <button v-on:click="handleRestart">New Questions</button>
     </div>
     <div v-if="results.correct">
       <result-display :results="results"/>
-      <button v-on:click="handleRestart">Start Again</button>
     </div>
   </div>
 </template>
