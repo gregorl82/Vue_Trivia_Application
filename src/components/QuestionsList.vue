@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <ul>
-      <question-item v-for="(question, index) in questions" :key="index" :question="question"/>
+      <question-item v-for="(question, index) in questions" :key="index" :number="index" :question="question"/>
     </ul>
   </div>
 </template>
