@@ -6,8 +6,11 @@
     </div>
     <div v-if="questions">
       <questions-list :questions="questions"/>
-      <button>Submit Answers</button>
+      <button v-on:click="handleSubmit">Submit Answers</button>
       <button v-on:click="handleRestart">New Questions</button>
+    </div>
+    <div v-if="correctQuestions">
+      <result-display :score="correctQuestions"/>
     </div>
   </div>
 </template>
@@ -15,26 +18,39 @@
 <script>
 import AppTitle from './components/AppTitle.vue';
 import CategorySelector from './components/CategorySelector.vue';
-import QuestionsList from './components/QuestionsList.vue'
-import { eventBus } from './main.js'
+import QuestionsList from './components/QuestionsList.vue';
+import ResultDisplay from './components/ResultDisplay.vue';
+import { eventBus } from './main.js';
 
 export default {
   name: 'app',
   components: {
     'app-title': AppTitle,
     'category-selector': CategorySelector,
-    'questions-list': QuestionsList
+    'questions-list': QuestionsList,
+    'result-display': ResultDisplay
   },
   data(){
     return {
       title: "Qwizzr",
       categories: [],
-      questions: null
+      questions: null,
+      correctQuestions: null
     }
   },
   methods: {
+    handleSubmit: function(){
+      this.correctQuestions = 0;
+      this.questions.forEach((question) => {
+        if (question.correct_answer === question.selectedAnswer){
+          this.correctQuestions += 1;
+        }
+      });
+      this.questions = null;
+    },
     handleRestart: function(){
-      this.questions = null
+      this.questions = null,
+      this.correctQuestions = null
     }
   },
   mounted(){
