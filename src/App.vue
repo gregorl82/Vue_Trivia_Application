@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <app-title :title="title"/>
-    <category-selector />
+    <category-selector :categories="categories"/>
   </div>
 </template>
 
@@ -20,6 +20,13 @@ export default {
       title: "Quizzical",
       categories: []
     }
+  },
+  mounted(){
+    fetch("https://opentdb.com/api_category.php")
+    .then(response => response.json())
+    .then((data) => {
+      this.categories = data.trivia_categories;
+    })
   }
 }
 </script>

@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'category-selector'
+  name: 'category-selector',
+  props: ['categories']
 }
 </script>
 
