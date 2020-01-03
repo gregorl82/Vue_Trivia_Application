@@ -7,7 +7,7 @@
     <div v-if="questions">
       <questions-list :questions="questions"/>
       <button>Submit Answers</button>
-      <button v-on:click="handleRestart">Restart Quiz</button>
+      <button v-on:click="handleRestart">New Questions</button>
     </div>
   </div>
 </template>

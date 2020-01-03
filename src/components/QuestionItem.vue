@@ -3,7 +3,7 @@
     <p>Question {{questionNumber}}</p>
     <p v-html="question.question"></p>
     <ul>
-      <answer-item v-for="(answer, index) in answerArray" :key="index" :answer="answer"/>
+      <answer-item v-for="(answer, index) in answerArray" :key="index" :answer="answer" :number="number"/>
     </ul>
   </div>
 </template>
