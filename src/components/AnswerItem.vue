@@ -1,13 +1,11 @@
 <template lang="html">
-  <div>
-    <h1>??? {{title}} ???</h1>
-  </div>
+  <p v-html="answer"></p>
 </template>
 
 <script>
 export default {
-  name: 'app-title',
-  props: ['title']
+  name: 'answer-item',
+  props: ['answer']
 }
 </script>
 

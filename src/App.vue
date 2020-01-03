@@ -4,8 +4,10 @@
       <app-title :title="title"/>
       <category-selector :categories="categories"/>
     </div>
-    <div>
+    <div v-if="questions">
       <questions-list :questions="questions"/>
+      <button>Submit Answers</button>
+      <button v-on:click="handleRestart">Restart Quiz</button>
     </div>
   </div>
 </template>
@@ -27,7 +29,12 @@ export default {
     return {
       title: "Qwizzr",
       categories: [],
-      questions: []
+      questions: null
+    }
+  },
+  methods: {
+    handleRestart: function(){
+      this.questions = null
     }
   },
   mounted(){
