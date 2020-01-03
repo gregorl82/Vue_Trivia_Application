@@ -1,11 +1,13 @@
 <template lang="html">
-  <h3>You scored {{score}} out of 10!</h3>
+  <div>
+    <h3>You scored {{results.correct}} out of 10!</h3>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'result-display',
-  props: ['score']
+  props: ['results']
 }
 </script>
 

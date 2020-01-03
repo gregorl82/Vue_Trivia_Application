@@ -9,8 +9,9 @@
       <button v-on:click="handleSubmit">Submit Answers</button>
       <button v-on:click="handleRestart">New Questions</button>
     </div>
-    <div v-if="correctQuestions">
-      <result-display :score="correctQuestions"/>
+    <div v-if="results.correct">
+      <result-display :results="results"/>
+      <button v-on:click="handleRestart">Start Again</button>
     </div>
   </div>
 </template>
@@ -35,22 +36,31 @@ export default {
       title: "Qwizzr",
       categories: [],
       questions: null,
-      correctQuestions: null
+      results: {
+        correct: null,
+        incorrect: null
+      }
     }
   },
   methods: {
     handleSubmit: function(){
-      this.correctQuestions = 0;
+      this.results.correct = 0;
+      this.results.incorrect = 0;
       this.questions.forEach((question) => {
         if (question.correct_answer === question.selectedAnswer){
-          this.correctQuestions += 1;
+          this.results.correct += 1;
+        } else {
+          this.results.incorrect += 1;
         }
       });
       this.questions = null;
     },
     handleRestart: function(){
       this.questions = null,
-      this.correctQuestions = null
+      this.results = {
+        correct: null,
+        incorrect: null
+      }
     }
   },
   mounted(){
