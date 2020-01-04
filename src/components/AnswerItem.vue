@@ -1,5 +1,5 @@
 <template lang="html">
-  <p id="answer-item" v-on:click="handleClick" v-html="answer.text"></p>
+  <p id="answer-item" :class="selectedClass" v-on:click="handleClick" v-html="answer.text"></p>
 </template>
 
 <script>
@@ -16,15 +16,27 @@ export default {
       }
       eventBus.$emit('answer-clicked', result);
     }
+  },
+  computed: {
+    selectedClass: function(){
+      return this.answer.selected ? "selected" : "not-selected"
+    }
   }
 }
 </script>
 
 <style lang="css" scoped>
 
+.selected {
+  background-color: grey;
+}
+
+.not-selected {
+  background-color: white;
+}
+
 #answer-item {
   padding: 20px;
-  background-color: white;
   border-radius: 5px;
   font-size: 20px;
 }
