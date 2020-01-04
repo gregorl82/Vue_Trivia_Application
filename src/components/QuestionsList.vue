@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="questions-list">
-    <h2 id="questions-instruction">Click the correct answer</h2>
+    <h2 id="questions-instruction">Click the answers and submit for results</h2>
     <ul>
       <question-item v-for="(question, index) in formattedAnswerQuestions" :key="index" :number="index" :question="question"/>
     </ul>

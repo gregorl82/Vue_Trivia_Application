@@ -28,7 +28,9 @@ export default {
 <style lang="css" scoped>
 
 .selected {
-  background-color: grey;
+  color: rebeccapurple;
+  background-color: lightgrey;
+  font-weight: bold;
 }
 
 .not-selected {
