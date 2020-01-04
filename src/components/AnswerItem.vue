@@ -42,7 +42,7 @@ export default {
 }
 
 #answer-item:hover {
-  background-color: grey;
+  background-color: #ffffe6;
 }
 
 </style>

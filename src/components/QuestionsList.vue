@@ -1,5 +1,6 @@
 <template lang="html">
   <div id="questions-list">
+    <h2 id="questions-instruction">Click the correct answer</h2>
     <ul>
       <question-item v-for="(question, index) in formattedAnswerQuestions" :key="index" :number="index" :question="question"/>
     </ul>
@@ -52,6 +53,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#questions-instruction {
+  font-family: 'Fugaz One', cursive;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
 
 #questions-list {
   padding: 20px;
