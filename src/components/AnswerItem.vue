@@ -1,5 +1,5 @@
 <template lang="html">
-  <p id="answer-item" v-on:click="handleClick" v-html="answer"></p>
+  <p id="answer-item" v-on:click="handleClick" v-html="answer.answer"></p>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
   methods: {
     handleClick: function(){
       const result = {
-        answer: this.answer,
+        answer: this.answer.answer,
         questionIndex: this.number
       }
       eventBus.$emit('answer-clicked', result);

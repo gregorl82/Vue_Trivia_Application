@@ -26,7 +26,14 @@ export default {
       let answers = this.question.incorrect_answers;
       let index = Math.floor(Math.random() * Math.floor(3));
       answers.splice(index, 0, this.question.correct_answer);
-      return answers;
+      let answerObjects = []
+      answers.forEach((answer) => {
+        let obj = {};
+        obj['answer'] = answer;
+        obj['selected'] = false;
+        answerObjects.push(obj);
+      })
+      return answerObjects;
     }
   }
 }
