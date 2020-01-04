@@ -1,14 +1,15 @@
 <template lang="html">
-  <div>
+  <div id="app">
     <div v-if="!questions">
       <app-title :title="title"/>
       <category-selector :categories="categories"/>
     </div>
     <div v-if="questions">
-      <h3>Select the correct answer</h3>
       <questions-list :questions="questions"/>
-      <button v-on:click="handleSubmit">Submit Answers</button>
-      <button v-on:click="handleRestart">New Questions</button>
+      <div id="question-buttons">
+        <button v-on:click="handleSubmit">Submit Answers</button>
+        <button v-on:click="handleRestart">New Questions</button>
+      </div>
     </div>
     <div v-if="results.correct">
       <result-display :results="results"/>
@@ -33,7 +34,7 @@ export default {
   },
   data(){
     return {
-      title: "Qwizzr",
+      title: "Qwizzr?",
       categories: [],
       questions: null,
       results: {
@@ -71,7 +72,8 @@ export default {
     })
 
     eventBus.$on('category-selected', (questions) => {
-      this.questions = questions
+      this.results = {};
+      this.questions = questions;
     })
 
     eventBus.$on('answer-clicked', (answer) => {
@@ -81,5 +83,32 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Questrial', sans-serif;
+}
+
+#app {
+  height: 100%;
+  background-color: #fff2fe;
+}
+
+#question-buttons {
+  display: flex;
+  justify-content: center;
+  background-color: #fff2fe;
+  padding-bottom: 30px;
+}
+
+#question-buttons button {
+  margin-bottom: 30px;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
 </style>

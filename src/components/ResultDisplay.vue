@@ -1,7 +1,6 @@
 <template lang="html">
-  <div>
+  <div id="results-display">
     <h3>You scored {{results.correct}} out of 10!</h3>
-    <p>Start a new quiz by selecting a new category above!</p>
   </div>
 </template>
 
@@ -13,4 +12,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#results-display {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
 </style>

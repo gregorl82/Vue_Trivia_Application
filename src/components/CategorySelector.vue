@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div id="category-selector">
     <label for="category-select">Pick a category: </label>
     <select v-model="categoryId" name="category-select">
       <option disabled value="">Please select one</option>
@@ -45,4 +45,23 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+select, option, label {
+  font-family: 'Questrial', sans-serif;
+  margin: 5px;
+  font-size: 20px;
+}
+
+button {
+  margin-left: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#category-selector {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
 </style>

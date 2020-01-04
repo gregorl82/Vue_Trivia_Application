@@ -1,6 +1,6 @@
 <template lang="html">
-  <div>
-    <p>Question {{questionNumber}}</p>
+  <div id="question-item">
+    <p class="question-title">Question {{questionNumber}}</p>
     <p v-html="question.question"></p>
     <ul>
       <answer-item v-for="(answer, index) in answerArray" :key="index" :answer="answer" :number="number"/>
@@ -33,4 +33,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.question-title {
+  font-family: 'Fugaz One', cursive;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+#question-item {
+  padding: 20px;
+  font-size: 24px;
+}
+
 </style>

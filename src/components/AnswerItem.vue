@@ -1,5 +1,5 @@
 <template lang="html">
-  <p v-on:click="handleClick" v-html="answer"></p>
+  <p id="answer-item" v-on:click="handleClick" v-html="answer"></p>
 </template>
 
 <script>
@@ -21,4 +21,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#answer-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#answer-item:hover {
+  background-color: grey;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div id="questions-list">
     <ul>
       <question-item v-for="(question, index) in questions" :key="index" :number="index" :question="question"/>
     </ul>
@@ -19,4 +19,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#questions-list {
+  padding: 20px;
+  background-color: #fff2fe;
+}
+
 </style>
