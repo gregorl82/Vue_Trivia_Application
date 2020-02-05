@@ -1,4 +1,4 @@
-# Qwizzr Trivia App
+<h1 align="center">Qwizzr Trivia App</h1>
 
 ## Introduction
 <p>A trivia game web application, built with Vue.js</p>
