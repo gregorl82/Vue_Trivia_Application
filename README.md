@@ -19,7 +19,7 @@
   <li>Vue.js (front-end framework for manipulating the DOM)</li>
   <li>FetchAPI (for making requests to the OpenTriviaDB)</li>
   <li>Google Charts plugin(for displaying column charts of a user's score)</li>
-  <li>CSS (for front-end styling></li>
+  <li>CSS (for front-end styling)</li>
   <li>Atom (text editor)</li>
 </ul>
 
