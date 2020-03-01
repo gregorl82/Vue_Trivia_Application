@@ -1,25 +1,19 @@
-<h1 align="center">Qwizzr Trivia App</h1>
-
-## Introduction
+<h1>Qwizzr Trivia App</h1>
+<h2>Introduction</h2>
 <p>A trivia game web application, built with Vue.js</p>
-
-## Project brief
-
+<h2>Brief</h2>
 <p>Create an application that makes a request to an API and displays the data.</p>
-
-### MVP
+<h2>MVP</h2>
 <ul>
   <li>The application should display data from an API request.</li>
   <li>The application should have a clear separation of concerns (multiple components).</li>
   <li>Take input from the user to update the page, by filtering or manipulating the data on user interaction, or by making further API requests to load more data that is then displayed.</li>
 </ul>
-
-### Extensions
+<h2>Extensions</h2>
 <ul>
   <li>Use an external library to visualise the data.</li>
 </ul>
-
-## Technologies used
+<h2>Technologies used</h2>
 <p>This application was built using the following technologies:</p>
 <ul>
   <li>Vue.js (front-end framework for manipulating the DOM)</li>
